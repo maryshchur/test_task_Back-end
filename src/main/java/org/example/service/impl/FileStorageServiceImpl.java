@@ -25,15 +25,11 @@ public class FileStorageServiceImpl implements FileStorageService {
         return fileName;
     }
 
-
-//    "classpath:application.properties")
     @Value("${UPLOADED_FOLDER}")
     private   String UPLOADED_FOLDER ;
-//            "C:\\Users\\maric\\IdeaProjects\\test_tack\\src\\main\\resources\\images\\";
 
     private String convertMultiPartToFileAndSave(MultipartFile multipartFile) throws IOException {
         String name = multipartFile.getOriginalFilename();
-        System.out.println("UPLOADED_FOLDER"+UPLOADED_FOLDER);
         FileOutputStream fos = new FileOutputStream(UPLOADED_FOLDER + name);
         fos.write(multipartFile.getBytes());
         fos.close();
@@ -44,7 +40,7 @@ public class FileStorageServiceImpl implements FileStorageService {
     @Override
     public boolean deleteFile(String fileName) {
         try {
-            Path file = Paths.get("UPLOADED_FOLDER").resolve(fileName);
+            Path file = Paths.get(UPLOADED_FOLDER).resolve(fileName);
             return Files.deleteIfExists(file);
         } catch (Exception e) {
             throw new CustomException("Error: " + e.getMessage());
