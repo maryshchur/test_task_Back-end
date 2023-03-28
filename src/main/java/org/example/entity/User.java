@@ -3,7 +3,6 @@ package org.example.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import nonapi.io.github.classgraph.json.Id;
 
 import javax.persistence.*;
 import java.io.Serializable;

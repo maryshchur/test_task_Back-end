@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "datasource",
+      "type": "org.example.config.DatabaseConfig",
+      "sourceType": "org.example.config.DatabaseConfig"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
